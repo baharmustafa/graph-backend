@@ -17,7 +17,7 @@ const type_graphql_1 = require("type-graphql");
 const author_entity_1 = require("../../entities/author-entity");
 const author_arguments_1 = require("./author-arguments");
 let AuthorResolver = class AuthorResolver {
-    async countries() {
+    async authors() {
         return await author_entity_1.AuthorModel.find({});
     }
     async author(_id) {
@@ -40,7 +40,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
-], AuthorResolver.prototype, "countries", null);
+], AuthorResolver.prototype, "authors", null);
 __decorate([
     (0, type_graphql_1.Query)(returns => author_entity_1.Author),
     __param(0, (0, type_graphql_1.Arg)("_id")),
