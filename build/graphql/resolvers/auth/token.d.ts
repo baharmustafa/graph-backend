@@ -1,1 +1,1 @@
-export declare function getToken(email: string): string;
+export declare function getToken(email: string): any;

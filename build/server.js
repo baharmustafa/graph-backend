@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const apollo_server_express_1 = require("apollo-server-express");
 const apollo_server_core_1 = require("apollo-server-core");
 const express_1 = __importDefault(require("express"));
-const express_jwt_1 = require("express-jwt");
+const express_jwt_1 = __importDefault(require("express-jwt"));
 require("reflect-metadata");
 const mongoose_1 = __importDefault(require("mongoose"));
 const http_1 = __importDefault(require("http"));
@@ -15,6 +15,8 @@ const body_parser_1 = __importDefault(require("body-parser"));
 const schema_1 = require("./schema");
 const geoip_lite_1 = __importDefault(require("geoip-lite"));
 const mobile_detect_1 = __importDefault(require("mobile-detect"));
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 const app = (0, express_1.default)();
 const PORT = 3001;
 app.use(express_1.default.json());
@@ -24,7 +26,7 @@ app.listen(PORT, () => {
 const graphQlPath = process.env.GRAPHQL_PATH;
 const port = process.env.PORT;
 const dbUrl = process.env.MONGODB_URL;
-const auth = (0, express_jwt_1.expressjwt)({
+const auth = (0, express_jwt_1.default)({
     secret: process.env.JWT_SECRET,
     algorithms: ['HS256'],
     credentialsRequired: false,

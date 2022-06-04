@@ -1,7 +1,7 @@
 import { ApolloServer } from "apollo-server-express"
 import { ApolloServerPluginDrainHttpServer, ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core';
 import express from "express"
-import { expressjwt } from "express-jwt"; 
+import jwt from "express-jwt"; 
 import "reflect-metadata";
 import mongoose from "mongoose";
 import http from "http"
@@ -12,6 +12,8 @@ import geoip from "geoip-lite";
 import MobileDetect from "mobile-detect";
 import dotenv from "dotenv";
 import { Context } from "./graphql/resolvers/auth/context";
+
+dotenv.config();
 
 const app = express()
 const PORT = 3001
@@ -24,10 +26,10 @@ const graphQlPath = process.env.GRAPHQL_PATH;
 const port = process.env.PORT;
 const dbUrl = process.env.MONGODB_URL
 
-const auth = expressjwt ({
-    secret: process.env.JWT_SECRET,
-    algorithms: ['HS256'],
-    credentialsRequired: false,
+const auth = jwt({
+  secret: process.env.JWT_SECRET,
+  algorithms: ['HS256'],
+  credentialsRequired: false,
 })
 
 mongoose.connect(dbUrl, {
