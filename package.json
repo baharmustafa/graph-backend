@@ -1,0 +1,54 @@
+{
+  "dependencies": {
+    "@typegoose/typegoose": "^9.8.1",
+    "@types/express": "^4.17.13",
+    "apollo-server-core": "^3.7.0",
+    "apollo-server-express": "^3.7.0",
+    "auth-checker": "^1.0.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "class-validator": "^0.13.2",
+    "context": "^2.0.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-jwt": "^7.7.1",
+    "geoip-lite": "^1.4.5",
+    "graphql": "^15.8.0",
+    "graphql-tools": "^8.2.9",
+    "mobile-detect": "^1.4.5",
+    "mongoose": "^6.3.3",
+    "resolvers": "^1.0.0",
+    "schema": "^0.2.1",
+    "tsc": "^2.0.4",
+    "type-graphql": "^1.1.1"
+  },
+  "devDependencies": {
+    "ts-node": "^10.8.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.7.2"
+  },
+  "name": "graph-ts",
+  "version": "1.0.0",
+  "description": "typegraphql",
+  "main": "node build/server.js",
+  "scripts": {
+    "start": "node build/server.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "watch:dev": "nodemon --watch src --exec npm run dev",
+    "build": "tsc",
+    "postinstall": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "typegraphql",
+    "typecsript",
+    "apollo",
+    "server"
+  ],
+  "author": "Bahar Mustafa",
+  "license": "ISC",
+  "engines": { 
+    "node": "16.15.0" 
+  } 
+}
