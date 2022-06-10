@@ -21,7 +21,6 @@
     "resolvers": "^1.0.0",
     "schema": "^0.2.1",
     "ts-node": "^10.8.0",
-    "tsc": "^2.0.4",
     "type-graphql": "^1.1.1"
   },
   "devDependencies": {
