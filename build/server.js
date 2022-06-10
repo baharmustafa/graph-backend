@@ -18,7 +18,7 @@ const mobile_detect_1 = __importDefault(require("mobile-detect"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
-const PORT = 3001;
+const PORT = process.env.PORT;
 app.use(express_1.default.json());
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
